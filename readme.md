@@ -67,6 +67,8 @@ Your connection string to MongoDB will now be in a **.env** file now (go have a 
 
 Your **.env file** is a secret config file that holds key app variables like this MongoDB URI string, and other things like 3rd Party API secrets and keys. It is specified in the .gitignore file, which means the .env file will **not** be tracked by .git and not available for others to see on github (this is good).
 
+### Starting the Server
+
 11) We're ready to go! Start server with **npm start**.
 
 	npm start
