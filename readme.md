@@ -79,7 +79,7 @@ However, a slight annoyance here is that **every** time you change your code, yo
 
 A better option is to auto restart your server after you make some changes to your code. To do this, install **Nodemon**. [Nodemon](https://github.com/remy/nodemon) will watch your files and restart the server for you.
 
-Install Nodemon. In Terminal type,
+Install Nodemon (you only need to do this **once**). In Terminal type,
 
 	npm install -g nodemon
 
@@ -115,25 +115,6 @@ You don't need to double add and double commit though. So the following will wor
 	git commit -am "your commit message"
 	git push origin master
 	git push heroku master
-
-### Auto restart development server (optional)
-
-To auto restart your development server after you make some changes to your code. Install **Nodemon**. [Nodemon](https://github.com/remy/nodemon) will watch your files and restart the server for you.
-
-Install Nodemon. In Terminal type,
-
-	npm install -g nodemon
-
-There are two possible ways to use Nodemon. You can start the app with:
-
-	foreman run nodemon app.js
-
-Or with the helper script:
-
-	. devserver
-
-The **.nodemonignore** file will ignore certain files and directories from being watched. By default and for example we're ignoring /public folder.
-
 
 ### This App's Framework and NodeJS
 
@@ -186,24 +167,26 @@ For example, open up package.json. You can see we are setting our dependent pack
 
 package.json
 	
-	"dependencies": {
-	  "body-parser": "^1.10.1",
-	  "express": "^4.10.7",
-	  "geocoder": "^0.2.2",
-	  "method-override": "^2.3.1",
-	  "moment": "^2.9.0",
-	  "mongoose": "^3.8.21",
-	  "request": "^2.51.0"
-	}
+  "dependencies": {
+    "body-parser": "~1.13.2",
+    "cookie-parser": "~1.3.5",
+    "debug": "~2.2.0",
+    "express": "~4.13.1",
+    "jade": "~1.11.0",
+    "mongoose": "^4.1.10",
+    "morgan": "~1.6.1",
+    "serve-favicon": "~2.3.0"
+  }
 
-Dependencies are then declared in app.js like:
+Dependencies are then declared in the app.js like:
 
 	var express = require('express');
-	var http = require('http');
 	var path = require('path');
-	var mongoose = require('mongoose');
+	var favicon = require('serve-favicon');
+	var logger = require('morgan');
+	var cookieParser = require('cookie-parser');
 	var bodyParser = require('body-parser');
-	var methodOverride = require('method-override');
+	var mongoose = require('mongoose');
 
 To add a new node package, do the following in terminal:
 
