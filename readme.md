@@ -167,16 +167,16 @@ For example, open up package.json. You can see we are setting our dependent pack
 
 package.json
 	
-  "dependencies": {
-    "body-parser": "~1.13.2",
-    "cookie-parser": "~1.3.5",
-    "debug": "~2.2.0",
-    "express": "~4.13.1",
-    "jade": "~1.11.0",
-    "mongoose": "^4.1.10",
-    "morgan": "~1.6.1",
-    "serve-favicon": "~2.3.0"
-  }
+	"dependencies": {
+	  "body-parser": "~1.13.2",
+	  "cookie-parser": "~1.3.5",
+	  "debug": "~2.2.0",
+	  "express": "~4.13.1",
+	  "jade": "~1.11.0",
+	  "mongoose": "^4.1.10",
+	  "morgan": "~1.6.1",
+	  "serve-favicon": "~2.3.0"
+	}
 
 Dependencies are then declared in the app.js like:
 
