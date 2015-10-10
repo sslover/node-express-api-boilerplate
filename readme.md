@@ -49,7 +49,7 @@ You can always open your app with the command:
 
 ### Setting Up Your MongoDB database
 
-Heroku has many nice add-ons that make it easier to set-up an app. For example, the MongoLabs add-on gives you a MongoDB database with a single line of code.
+Heroku has many nice add-ons that make it easier to set-up an app. For example, the MongoLabs add-on gives you a MongoDB database with a single command.
 
 9) Add MongoLabs Starter MongoDB to your heroku app:
 
@@ -77,7 +77,7 @@ Stop the server with Ctrl+c.
 
 However, a slight annoyance here is that **every** time you change your code, you'll need to stop and restart your server.
 
-A better option is to auto restart your server after you make some changes to your code. To do this, install **Nodemon**. [Nodemon](https://github.com/remy/nodemon) will watch your files and restart the server for you.
+A better option is to auto restart your server after you make some changes to your code. To do this, install **Nodemon**. [Nodemon](https://github.com/remy/nodemon) will watch your files and restart the server for you whenever your code changes.
 
 Install Nodemon (you only need to do this **once**). In Terminal type,
 
