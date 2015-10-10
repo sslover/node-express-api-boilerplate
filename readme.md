@@ -71,6 +71,18 @@ Your **.env file** is a secret config file that holds key app variables like thi
 
 	npm start
 
+However, a slight annoyance here is that every time you change your code, you'll need to stop (Ctrl+c) and restart your server.
+
+A better option is to auto restart your server after you make some changes to your code. To do this, install **Nodemon**. [Nodemon](https://github.com/remy/nodemon) will watch your files and restart the server for you.
+
+Install Nodemon. In Terminal type,
+
+	npm install -g nodemon
+
+Then, you can start the app with:
+
+	nodemon start
+
 12) Open web browser to <http://localhost:3000> to view the web app.
 
 13) Stop the web server press Ctrl+c in the Terminal window.
