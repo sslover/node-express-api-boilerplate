@@ -6,7 +6,7 @@ router.get('/', function(req, res, next) {
   
   var jsonData = {
   	'name': 'node-express-api-boilerplate',
-  	'api-status':'OssdfsfK'
+  	'api-status':'OK'
   }
 
   // respond with json data

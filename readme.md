@@ -71,7 +71,9 @@ Your **.env file** is a secret config file that holds key app variables like thi
 
 	npm start
 
-However, a slight annoyance here is that every time you change your code, you'll need to stop (Ctrl+c) and restart your server.
+Stop the server with Ctrl+c.
+
+However, a slight annoyance here is that **every** time you change your code, you'll need to stop and restart your server.
 
 A better option is to auto restart your server after you make some changes to your code. To do this, install **Nodemon**. [Nodemon](https://github.com/remy/nodemon) will watch your files and restart the server for you.
 
@@ -94,7 +96,7 @@ As you make changes, you'll want to periodically push your updated code base to 
 To get your updated code to **Heroku**, you'll need to:
 
 	git add .
-	git commit -am "your commit message"
+	git commit -m "your commit message"
 	git push heroku master
 
 To get your updated code to **Github**, you'll need to:
