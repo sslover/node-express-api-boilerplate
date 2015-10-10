@@ -79,7 +79,7 @@ However, a slight annoyance here is that **every** time you change your code, yo
 
 A better option is to auto restart your server after you make some changes to your code. To do this, install **Nodemon**. [Nodemon](https://github.com/remy/nodemon) will watch your files and restart the server for you whenever your code changes.
 
-Install Nodemon (you only need to do this **once**). In Terminal type,
+Install Nodemon (you only need to do this **once**, and then it will be installed globally on your machine). In Terminal type,
 
 	npm install -g nodemon
 
