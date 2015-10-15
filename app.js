@@ -5,10 +5,14 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+var env = require('node-env-file');
 
 var routes = require('./routes/index');
 
 var app = express();
+
+// load env variables
+env(__dirname + '/.env');
 
 // connect to database
 app.db = mongoose.connect(process.env.MONGOLAB_URI);

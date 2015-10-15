@@ -40,7 +40,8 @@ router.post('/api/create', function(req, res, next){
     var tags = req.body.tags.split(","); // split string into array
     var weight = req.body.weight;
     var color = req.body.color;
-
+    var url = req.body.url;
+    
     // hold all this data in an object
     // this object should be structured the same way as your db model
     var animalObj = {
@@ -50,7 +51,8 @@ router.post('/api/create', function(req, res, next){
       description: {
         weight: weight,
         color: color
-      }
+      },
+      url: url
     };
 
     // create a new animal model instance, passing in the object
