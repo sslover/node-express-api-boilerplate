@@ -10,7 +10,7 @@ var routes = require('./routes/index');
 
 var app = express();
 
-// set database
+// connect to database
 app.db = mongoose.connect(process.env.MONGOLAB_URI);
 
 // view engine setup

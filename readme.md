@@ -69,11 +69,16 @@ Your **.env file** is a secret config file that holds key app variables like thi
 
 ### Starting the Server
 
-11) We're ready to go! Start server with **npm start**.
+11) We're ready to go! Run **source .env** and then **npm start**.
 
+	source .env
 	npm start
 
-Stop the server with Ctrl+c.
+The source command will run the .env file, setting the environment variables in your current terminal session (so that you can access these variables)
+
+The npm start command starts the server.
+
+You can stop the server with Ctrl+c.
 
 However, a slight annoyance here is that **every** time you change your code, you'll need to stop and restart your server.
 
@@ -85,6 +90,7 @@ Install Nodemon (you only need to do this **once**, and then it will be installe
 
 Then, you can start the app with:
 
+	source .env
 	nodemon start
 
 12) Open web browser to <http://localhost:3000> to view the web app.
