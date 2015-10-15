@@ -11,8 +11,10 @@ var routes = require('./routes/index');
 
 var app = express();
 
-// load env variables
-env(__dirname + '/.env');
+// if in development mode, load .env variables
+if (app.get("env") === "development") {
+    env(__dirname + '/.env');
+}
 
 // connect to database
 app.db = mongoose.connect(process.env.MONGOLAB_URI);
