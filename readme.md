@@ -74,7 +74,7 @@ Your **.env file** is a secret config file that holds key app variables like thi
 	source .env
 	npm start
 
-The source command will run the .env file, setting the environment variables in your current terminal session (so that you can access these variables)
+The source command will run the .env file, setting the environment variables in your current terminal session (so that you can access these variables from within your application).
 
 The npm start command starts the server.
 
