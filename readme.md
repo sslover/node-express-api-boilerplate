@@ -152,7 +152,7 @@ For example:
 
   // when the user requests the 'api/get' route, call a function that retrieves the data, and responds back
 
-	app.get('api/get',function(request, response){
+	router.get('/api/get', function(req, res, next){
 		// step 1 - code to retrieve data
 		// step 2 - code to respond back with res.json();
 	})
@@ -167,16 +167,16 @@ For example, open up package.json. You can see we are setting our dependent pack
 
 package.json
 	
-	"dependencies": {
-	  "body-parser": "~1.13.2",
-	  "cookie-parser": "~1.3.5",
-	  "debug": "~2.2.0",
-	  "express": "~4.13.1",
-	  "jade": "~1.11.0",
-	  "mongoose": "^4.1.10",
-	  "morgan": "~1.6.1",
-	  "serve-favicon": "~2.3.0"
-	}
+  "dependencies": {
+    "body-parser": "~1.13.2",
+    "cookie-parser": "~1.3.5",
+    "debug": "~2.2.0",
+    "express": "~4.13.1",
+    "mongoose": "^4.1.10",
+    "morgan": "~1.6.1",
+    "node-env-file": "^0.1.7",
+    "serve-favicon": "~2.3.0"
+  }
 
 Dependencies are then declared in the app.js like:
 
@@ -187,6 +187,7 @@ Dependencies are then declared in the app.js like:
 	var cookieParser = require('cookie-parser');
 	var bodyParser = require('body-parser');
 	var mongoose = require('mongoose');
+	var env = require('node-env-file');
 
 To add a new node package, do the following in terminal:
 
