@@ -22,13 +22,12 @@ router.get('/', function(req, res, next) {
   res.json(jsonData)
 });
 
-
-/**
- * POST '/api/create'
- * Receives a POST request of the new user and location, saves to db, responds back
- * @param  {Object} req. An object containing the different attributes of the Person
- * @return {Object} JSON
- */
+// /**
+//  * POST '/api/create'
+//  * Receives a POST request of the new user and location, saves to db, responds back
+//  * @param  {Object} req. An object containing the different attributes of the Person
+//  * @return {Object} JSON
+//  */
 
 router.post('/api/create', function(req, res, next){
 

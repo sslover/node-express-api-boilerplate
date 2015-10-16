@@ -17,7 +17,7 @@ This is boilerplate code for setting up a simple node.js RESTful API app using: 
 
 3) Set up an account at <https://heroku.com>. You will be asked to enter a credit card, but the app we are doing will not incur any charges (they just need a card on file). In fact, all Heroku apps have a starter/free level.
 
-4) Download this boilerplate repo and navigate into the code directory with Terminal:
+4) Download this boilerplate repo and navigate into the code directory with Terminal. To download it, click "Download Zip" at [the repo](https://github.com/sslover/node-express-api-boilerplate)... (do not clone it).
 
 cd path/to/this/code/directory
 
