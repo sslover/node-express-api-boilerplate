@@ -85,7 +85,7 @@ Install Nodemon (you only need to do this **once**, and then it will be installe
 
 Then, you can start the app with:
 
-	nodemon start
+	nodemon
 
 12) Open web browser to <http://localhost:3000> to view the web app.
 
