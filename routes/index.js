@@ -11,7 +11,7 @@ var Animal = require("../models/model.js");
  * @param  {Object} req
  * @return {Object} json
  */
-router.get('/', function(req, res, next) {
+router.get('/', function(req, res) {
   
   var jsonData = {
   	'name': 'node-express-api-boilerplate',
@@ -29,7 +29,7 @@ router.get('/', function(req, res, next) {
 //  * @return {Object} JSON
 //  */
 
-router.post('/api/create', function(req, res, next){
+router.post('/api/create', function(req, res){
 
     console.log(req.body);
 
@@ -87,7 +87,7 @@ router.post('/api/create', function(req, res, next){
 //  * @return {Object} JSON
 //  */
 
-router.get('/api/get/:id', function(req, res, next){
+router.get('/api/get/:id', function(req, res){
 
   var requestedId = req.param('id');
 
@@ -117,7 +117,7 @@ router.get('/api/get/:id', function(req, res, next){
 //  * @return {Object} JSON
 //  */
 
-router.get('/api/get', function(req, res, next){
+router.get('/api/get', function(req, res){
 
   // mongoose method to find all, see http://mongoosejs.com/docs/api.html#model_Model.find
   Animal.find(function(err, data){
@@ -148,7 +148,7 @@ router.get('/api/get', function(req, res, next){
 //  * @return {Object} JSON
 //  */
 
-router.post('/api/update/:id', function(req, res, next){
+router.post('/api/update/:id', function(req, res){
 
    var requestedId = req.param('id');
 
@@ -228,7 +228,7 @@ router.post('/api/update/:id', function(req, res, next){
  * @return {Object} JSON
  */
 
-router.get('/api/delete/:id', function(req, res, next){
+router.get('/api/delete/:id', function(req, res){
 
   var requestedId = req.param('id');
 
