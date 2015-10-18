@@ -22,6 +22,11 @@ router.get('/', function(req, res) {
   res.json(jsonData)
 });
 
+// simple route to show an HTML page
+router.get('/sample-page', function(req,res){
+  res.render('sample.html')
+})
+
 // /**
 //  * POST '/api/create'
 //  * Receives a POST request of the new user and location, saves to db, responds back
