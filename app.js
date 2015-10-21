@@ -7,8 +7,6 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var env = require('node-env-file');
 
-var routes = require('./routes/index');
-
 var app = express();
 
 // if in development mode, load .env variables
@@ -34,6 +32,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+var routes = require('./routes/index');
 app.use('/', routes);
 
 // catch 404 and forward to error handler
