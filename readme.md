@@ -63,7 +63,7 @@ If you log-in to your heroku dashboard at <https://heroku.com>, you'll now see t
 
 Your connection string to MongoDB will now be in a **.env** file now (go have a look at the .env file). Your app connects to this database in the app.js file:
 
-	app.db = mongoose.connect(process.env.MONGOLAB_URI);
+app.db = mongoose.connect(process.env.MONGOLAB_URI);
 
 Your **.env file** is a secret config file that holds key app variables like this MongoDB URI string, and other things like 3rd Party API secrets and keys. It is specified in the .gitignore file, which means the .env file will **not** be tracked by .git and not available for others to see on github (this is good).
 
@@ -103,7 +103,7 @@ To get your updated code to **Heroku**, you'll need to:
 
 To get your updated code to **Github**, you'll need to:
 
-(first, create a new repo; then, once a repo is created and you have changes to push):
+(first, create a new repo at Github; **you only need to create a repo once per project**; then, once a repo is created and you have changes to push):
 
 	git add .
 	git commit -am "your commit message"
