@@ -59,11 +59,11 @@ If you log-in to your heroku dashboard at <https://heroku.com>, you'll now see t
 
 10) Get the Heroku MongoLab connection string into an .env file. 
 
-	heroku config --shell | grep MONGOLAB_URI >> .env
+	heroku config --shell | grep MONGODB_URI >> .env
 
 Your connection string to MongoDB will now be in a **.env** file now (go have a look at the .env file). Your app connects to this database in the app.js file:
 
-app.db = mongoose.connect(process.env.MONGOLAB_URI);
+app.db = mongoose.connect(process.env.MONGODB_URI);
 
 Your **.env file** is a secret config file that holds key app variables like this MongoDB URI string, and other things like 3rd Party API secrets and keys. It is specified in the .gitignore file, which means the .env file will **not** be tracked by .git and not available for others to see on github (this is good).
 
