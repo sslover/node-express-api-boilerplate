@@ -29,8 +29,8 @@ router.get('/sample-page', function(req,res){
 
 // /**
 //  * POST '/api/create'
-//  * Receives a POST request of the new user and location, saves to db, responds back
-//  * @param  {Object} req. An object containing the different attributes of the Person
+//  * Receives a POST request of the new animal, saves to db, responds back
+//  * @param  {Object} req. An object containing the different attributes of the Animal
 //  * @return {Object} JSON
 //  */
 
