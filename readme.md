@@ -39,7 +39,7 @@ First we'll start tracking it with Git:
 
 7) Create the Github Repo
 
-Go to [Github](https://github.com/) and create a new repo by clicking "New Repo" in top right **you only need to create a repo once per project**;
+Go to [Github](https://github.com/) and create a new repo by clicking "New Repo" in top right. **You only need to create a repo once per project**. You will keep pushing your latest code to this repo.
 
 This is the repo where your code will live at Github.
 
