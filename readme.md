@@ -41,8 +41,6 @@ First we'll start tracking it with Git:
 
 Go to [Github](https://github.com/) and create a new repo by clicking "New Repo" in top right. **You only need to create a repo once per project**. You will keep pushing your latest code to this repo.
 
-This is the repo where your code will live at Github.
-
 Once you've created the repo, choose the option: "…or push an existing repository from the command line"
 
 Run the following in Terminal:
