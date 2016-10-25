@@ -11,11 +11,15 @@ This is boilerplate code for setting up a simple node.js RESTful API app using: 
 
 **Dependenices:**
 
-1) Download node.js if you have not already <http://nodejs.org/>. You can confirm that node is successfully installed on your machine by opening up Terminal and typing 'node'. If you don't get an error, it's installed! You can exit the node process with Ctrl+c.
+**One time dependencies**
 
-2) Download and install the Heroku Toolbelt <https://toolbelt.heroku.com>, this will give you the Heroku CLI (command line interface).
+1) Download node.js if you have not already <http://nodejs.org/>. You can confirm that node is successfully installed on your machine by opening up Terminal and typing 'node'. If you don't get an error, it's installed! You can exit the node process with Ctrl+c. If you already have node, no action needed.
 
-3) Set up an account at <https://heroku.com>. You will be asked to enter a credit card, but the app we are doing will not incur any charges (they just need a card on file). In fact, all Heroku apps have a starter/free level.
+2) Download and install the Heroku Toolbelt <https://toolbelt.heroku.com>, this will give you the Heroku CLI (command line interface). If you already have the Heroku Toolbelt, you can skip this step.
+
+3) Set up an account at <https://heroku.com>. You will be asked to enter a credit card, but the app we are doing will not incur any charges (they just need a card on file). In fact, all Heroku apps have a starter/free level. If you already have a Heroku account, you can skip this step.
+
+**Every time dependencies**
 
 4) Download this boilerplate repo and navigate into the code directory with Terminal. To download it, click "Download Zip" at [the repo](https://github.com/sslover/node-express-api-boilerplate)... (do not clone it).
 
@@ -31,13 +35,31 @@ cd path/to/this/code/directory
 	git add .
 	git commit -am "init commit"
 
-7) Create the Heroku app
+7) Create the Github Repo
+
+Go to [Github](https://github.com/) and create a new repo by clicking "New Repo" in top right **you only need to create a repo once per project**;
+
+This is the repo where your code will live at Github.
+
+Once you've created the repo, choose the option: "…or push an existing repository from the command line"
+
+Run the following in Terminal:
+
+	git remote add origin insertYourUniqueURLHere
+	git push -u origin master
+
+The first command adds the Github repo to your app.
+The second command pushes your initial code to the repo.
+
+You can now refresh the repo page at Github and you will see the code there.
+
+8) Create the Heroku app
 
 	heroku create
 
 NOTE: if it is your very **FIRST** time setting up a Heroku app, you will need to upload a public key to Heroku. See <http://stackoverflow.com/a/6059231>. As explained in that StackOverlow link, if you don't yet have a public key, you'll be prompted to add one.
 
-8) Now that your heroku app is set-up, you can rename it whenever you like (now or in the future):
+9) Now that your heroku app is set-up, you can rename it whenever you like (now or in the future):
 
 	heroku rename your-new-name
 
@@ -51,13 +73,13 @@ You can always open your app with the command:
 
 Heroku has many nice add-ons that make it easier to set-up an app. For example, the MongoLabs add-on gives you a MongoDB database with a single command.
 
-9) Add MongoLabs Starter MongoDB to your heroku app:
+10) Add MongoLabs Starter MongoDB to your heroku app:
 
 	heroku addons:create mongolab
 
 If you log-in to your heroku dashboard at <https://heroku.com>, you'll now see this as an add-on. Click on the 'MongoLab' link to see your database.
 
-10) Get the Heroku MongoLab connection string into an .env file. 
+11) Get the Heroku MongoLab connection string into an .env file. 
 
 	heroku config --shell | grep MONGODB_URI >> .env
 
@@ -69,7 +91,7 @@ Your **.env file** is a secret config file that holds key app variables like thi
 
 ### Starting the Server
 
-11) We're ready to go! Run **npm start** to start your server.
+12) We're ready to go! Run **npm start** to start your server.
 
 	npm start
 
@@ -87,9 +109,11 @@ Then, you can start the app with:
 
 	nodemon
 
-12) Open web browser to <http://localhost:3000> to view the web app.
+**Once you do this step, you should always start your app with nodemon**
 
-13) Stop the web server press Ctrl+c in the Terminal window.
+13) Open web browser to <http://localhost:3000> to view the web app.
+
+14) Stop the web server press Ctrl+c in the Terminal window.
 
 ### Push Your App to Github and Heroku
 
@@ -103,13 +127,11 @@ To get your updated code to **Heroku**, you'll need to:
 
 To get your updated code to **Github**, you'll need to:
 
-(first, create a new repo at Github; **you only need to create a repo once per project**; then, once a repo is created and you have changes to push):
-
 	git add .
 	git commit -am "your commit message"
 	git push origin master
 
-You don't need to double add and double commit though. So the following will work:
+**You don't need to double add and double commit though. So the following will work:**
 
 	git add .
 	git commit -am "your commit message"
