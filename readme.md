@@ -29,7 +29,9 @@ cd path/to/this/code/directory
 
 	npm install
 
-6) We now need to setup a Git repository and Heroku app.
+6) We now need to setup Git, a Github repository, and a Heroku app.
+
+First we'll start tracking it with Git:
 
 	git init
 	git add .
