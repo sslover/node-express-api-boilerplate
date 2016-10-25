@@ -48,8 +48,8 @@ Run the following in Terminal:
 	git remote add origin insertYourUniqueURLHere
 	git push -u origin master
 
-The first command adds the Github repo to your app.
-The second command pushes your initial code to the repo.
+The first command associates the Github repo to your app (so we know which Github repo to push our code to).
+The second command actually pushes your code to the repo.
 
 You can now refresh the repo page at Github and you will see the code there.
 
