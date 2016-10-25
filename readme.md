@@ -11,7 +11,7 @@ This is boilerplate code for setting up a simple node.js RESTful API app using: 
 
 **Dependenices:**
 
-**One time dependencies**
+**One time dependencies (you only need to do these the first time you set up this app)**
 
 1) Download node.js if you have not already <http://nodejs.org/>. You can confirm that node is successfully installed on your machine by opening up Terminal and typing 'node'. If you don't get an error, it's installed! You can exit the node process with Ctrl+c. If you already have node, no action needed.
 
