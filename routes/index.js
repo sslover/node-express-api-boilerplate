@@ -146,6 +146,43 @@ router.get('/api/get', function(req, res){
 })
 
 // /**
+//  * GET '/api/search'
+//  * Receives a GET request to search an animal
+//  * @return {Object} JSON
+//  */
+router.get('/api/search', function(req,res){
+
+  // first use req.query to pull out the search query
+  var searchTerm = req.query.name;
+  console.log("we are searching for " + searchTerm);
+
+  // let's find that animal
+  Animal.find({name: searchTerm}, function(err,data){
+    // if err, respond with error 
+    if(err){
+      var error = {status:'ERROR', message: 'Something went wrong'};
+      return res.json(error);
+    }
+
+    //if no animals, respond with no animals message
+    if(data==null || data.length==0){
+      var message = {status:'NO RESULTS', message: 'We couldn\'t find any results'};
+      return res.json(message);      
+    }
+
+    // otherwise, respond with the data 
+
+    var jsonData = {
+      status: 'OK',
+      animals: data
+    } 
+
+    res.json(jsonData);        
+  })
+
+})
+
+// /**
 //  * POST '/api/update/:id'
 //  * Receives a POST request with data of the animal to update, updates db, responds back
 //  * @param  {String} req.param('id'). The animalId to update
