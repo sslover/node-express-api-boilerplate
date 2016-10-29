@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>hello</title>
+    
+    <style type="text/css">
+      img {
+        width: 200px;
+        border-radius: 50%;
+      }
+
+    </style>
+
+  </head>
+
+  <body>
+  
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+  </body>
+
+  <script type="text/javascript">
+  	// simple script to pull data from our database and display on page
+		$.getJSON('/api/get', function(data) {
+				console.log(data);
+				var animals = data.animals;
+				animals.forEach(function(e){
+					var htmlToAppend = '<p>'+e.name+'</p>'+
+					'<img src="'+e.url+'" />';
+					$('body').append(htmlToAppend);
+				})
+
+		});  	
+
+  </script>
+</html>

@@ -5,6 +5,18 @@ var mongoose = require('mongoose');
 // our db model
 var Animal = require("../models/model.js");
 
+// simple route to render am HTML form that can POST data to our server
+// NOTE that this is not a standard API route, and is really for testing
+router.get('/create-pet', function(req,res){
+  res.render('pet-form.html')
+})
+
+// simple route to render an HTML page that pulls data from our server and displays it on a page
+// NOTE that this is not a standard API route, and is really for testing
+router.get('/show-pets', function(req,res){
+  res.render('show-pets.html')
+})
+
 /**
  * GET '/'
  * Default home route. Just relays a success message back.
