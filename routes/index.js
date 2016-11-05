@@ -100,13 +100,13 @@ router.post('/api/create', function(req, res){
 // /**
 //  * GET '/api/get/:id'
 //  * Receives a GET request specifying the animal to get
-//  * @param  {String} req.param('id'). The animalId
+//  * @param  {String} req.params.id - The animalId
 //  * @return {Object} JSON
 //  */
 
 router.get('/api/get/:id', function(req, res){
 
-  var requestedId = req.param('id');
+  var requestedId = req.params.id;
 
   // mongoose method, see http://mongoosejs.com/docs/api.html#model_Model.findById
   Animal.findById(requestedId, function(err,data){
@@ -197,14 +197,14 @@ router.get('/api/search', function(req,res){
 // /**
 //  * POST '/api/update/:id'
 //  * Receives a POST request with data of the animal to update, updates db, responds back
-//  * @param  {String} req.param('id'). The animalId to update
+//  * @param  {String} req.params.id - The animalId to update
 //  * @param  {Object} req. An object containing the different attributes of the Animal
 //  * @return {Object} JSON
 //  */
 
 router.post('/api/update/:id', function(req, res){
 
-   var requestedId = req.param('id');
+   var requestedId = req.params.id;
 
    var dataToUpdate = {}; // a blank object of data to update
 
@@ -278,13 +278,13 @@ router.post('/api/update/:id', function(req, res){
 /**
  * GET '/api/delete/:id'
  * Receives a GET request specifying the animal to delete
- * @param  {String} req.param('id'). The animalId
+ * @param  {String} req.params.id - The animalId
  * @return {Object} JSON
  */
 
 router.get('/api/delete/:id', function(req, res){
 
-  var requestedId = req.param('id');
+  var requestedId = req.params.id;
 
   // Mongoose method to remove, http://mongoosejs.com/docs/api.html#model_Model.findByIdAndRemove
   Animal.findByIdAndRemove(requestedId,function(err, data){
