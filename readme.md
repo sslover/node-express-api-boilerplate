@@ -1,11 +1,11 @@
 ## Node.js / Express.js / MongoDb (+Mongoose) Boilerplate
 
-This is boilerplate code for setting up a simple node.js RESTful API app using: the express.js framework, a MongoDb database (with the help of Mongoose), and hosting it on Heroku. Please refer to the following documentation for each of these components:
+This is TEST boilerplate code for setting up a simple node.js RESTful API app using: the express.js framework, a MongoDb database (with the help of Mongoose), and hosting it on Heroku. Please refer to the following documentation for each of these components:
 
 * Node.js: <http://nodejs.org/>
 * Express.js: <http://expressjs.com/>
 * Moongoose.js (for MongoDB interaction): <http://mongoosejs.com/>
-* Heroku: <https://devcenter.heroku.com/categories/support> 
+* Heroku: <https://devcenter.heroku.com/categories/support>
 
 ### Getting started with your local development server
 
@@ -79,7 +79,7 @@ Heroku has many nice add-ons that make it easier to set-up an app. For example, 
 
 If you log-in to your heroku dashboard at <https://heroku.com>, you'll now see this as an add-on. Click on the 'MongoLab' link to see your database.
 
-11) Get the Heroku MongoLab connection string into an .env file. 
+11) Get the Heroku MongoLab connection string into an .env file.
 
 	heroku config --shell | grep MONGODB_URI >> .env
 
@@ -166,7 +166,7 @@ The above are typically called API endpoints, and client applications interact w
 
 Routing is how your app handles these incoming HTTP requests: performing the appropriate action and responding back to the client.
 
-In node.js (using Express), this is done through executing a callback function. In human language: 
+In node.js (using Express), this is done through executing a callback function. In human language:
 
 	when this request is received, perform this action, and respond back (usually with JSON).
 
@@ -188,7 +188,7 @@ A nice part about the ExpressJS framework (and nodejs in general) is the NPM sys
 For example, open up package.json. You can see we are setting our dependent packages. When you run npm install, all of these dependencies will be installed in your node_modules folder.
 
 package.json
-	
+
 	"dependencies": {
 	  "body-parser": "~1.13.2",
 	  "cookie-parser": "~1.3.5",
