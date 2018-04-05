@@ -1,6 +1,6 @@
 ## Node.js / Express.js / MongoDb (+Mongoose) Boilerplate
 
-This is TEST boilerplate code for setting up a simple node.js RESTful API app using: the express.js framework, a MongoDb database (with the help of Mongoose), and hosting it on Heroku. Please refer to the following documentation for each of these components:
+This is boilerplate code for setting up a simple node.js RESTful API app using: the express.js framework, a MongoDb database (with the help of Mongoose), and hosting it on Heroku. Please refer to the following documentation for each of these components:
 
 * Node.js: <http://nodejs.org/>
 * Express.js: <http://expressjs.com/>
@@ -9,9 +9,9 @@ This is TEST boilerplate code for setting up a simple node.js RESTful API app us
 
 ### Getting started with your local development server
 
-**Dependenices:**
+**One Time Dependencies (Do this the first time you set up the app):**
 
-**One time dependencies (you only need to do these the first time you set up this app). If you have set up this app before, skip to step 4.**
+**One time dependencies. If you have set up this app before, you can skip to step 4.**
 
 1) Download node.js if you have not already <http://nodejs.org/>. You can confirm that node is successfully installed on your machine by opening up Terminal and typing 'node'. If you don't get an error, it's installed! You can exit the node process with Ctrl+c. If you already have node, no action needed.
 
