@@ -25,7 +25,7 @@ This is boilerplate code for setting up a simple node.js RESTful API app using: 
 
 cd path/to/this/code/directory
 
-5) Run **npm install** to get all required libraries.
+5) Run **npm install** to get all required libraries:
 
 	npm install
 
