@@ -14,6 +14,10 @@ var animalSchema = new Schema({
 		color: String
 	},
 	url: String,
+	location: {
+		geo: { type: [Number], index: { type: '2dsphere', sparse: true } },
+		name: String
+	},
 	dateAdded : { type: Date, default: Date.now },
 })
 

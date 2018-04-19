@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
+var geocoder = require('geocoder'); // geocoder library
 
 // our db model
 var Animal = require("../models/model.js");
@@ -9,6 +10,10 @@ var Animal = require("../models/model.js");
 // NOTE that this is not a standard API route, and is really just for testing
 router.get('/create-pet', function(req,res){
   res.render('pet-form.html')
+})
+
+router.get('/create-pet-location', function(req,res){
+  res.render('pet-form-with-location.html')
 })
 
 // simple route to render an HTML page that pulls data from our server and displays it on a page
@@ -348,5 +353,84 @@ router.get('/edit/:id', function(req,res){
 
   })
 })
+
+router.post('/api/create/location', function(req, res){
+
+    console.log(req.body);
+
+    // pull out the information from the req.body
+    var name = req.body.name;
+    var age = req.body.age;
+    var tags = req.body.tags.split(","); // split string into array
+    var weight = req.body.weight;
+    var color = req.body.color;
+    var url = req.body.url;
+    var location = req.body.location;
+
+    // hold all this data in an object
+    // this object should be structured the same way as your db model
+    var animalObj = {
+      name: name,
+      age: age,
+      tags: tags,
+      description: {
+        weight: weight,
+        color: color
+      },
+      url: url
+    };
+
+  // if there is no location, return an error
+    if(!location) return res.json({status:'ERROR', message: 'You are missing a required field or have submitted a malformed request.'})
+
+    console.log('location is --> ' + location);
+    //now, let's geocode the location
+    geocoder.geocode(location, function (err,data) {
+
+      // if we get an error, or don't have any results, respond back with error
+      if (!data || data==null || err || data.status == 'ZERO_RESULTS'){
+        var error = {status:'ERROR', message: 'Error finding location'};
+        return res.json({status:'ERROR', message: 'You are missing a required field or have submitted a malformed request.'})
+      }
+
+      console.log(data);
+      // else, let's pull put the lat lon from the results
+      var lon = data.results[0].geometry.location.lng;
+      var lat = data.results[0].geometry.location.lat;
+
+      // now, let's add this to our animal object from above
+      animalObj.location = {
+        geo: [lon,lat], // need to put the geo co-ordinates in a lng-lat array for saving
+        name: data.results[0].formatted_address // the location name
+      }
+
+      // now, let's save it to the database
+      // create a new animal model instance, passing in the object we've created
+      var animal = new Animal(animalObj);
+
+      // now, save that animal instance to the database
+      // mongoose method, see http://mongoosejs.com/docs/api.html#model_Model-save
+      animal.save(function(err,data){
+        // if err saving, respond back with error
+        if (err){
+          var error = {status:'ERROR', message: 'Error saving animal'};
+          return res.json(error);
+        }
+
+        console.log('saved a new animal!');
+        console.log(data);
+
+        // now return the json data of the new animal
+        var jsonData = {
+          status: 'OK',
+          animal: data
+        }
+
+        return res.json(jsonData);
+
+      })
+
+    });
+});
 
 module.exports = router;
