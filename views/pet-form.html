@@ -1,16 +1,74 @@
-<form action="/api/create" method="POST">
-  Name:<br>
-  <input type="text" name="name" placeholder="Enter Name"><br>
-  Age:<br>
-  <input type="text" name="age" placeholder="Enter Age"><br>
-  Tags:<br>
-  <input type="text" name="tags" placeholder="Enter Tags"><br>
-  Weight:<br>
-  <input type="text" name="weight" placeholder="Enter Weight"><br>
-  Color:<br>
-  <input type="text" name="color" placeholder="Enter Color"><br>
-  URL:<br>
-  <input type="text" name="url" placeholder="Enter URL"><br>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Add a Pet</title>
 
-  <input type="submit" value="Submit">
-</form>
+    <!-- Custom Font - Change 'Muli' to the font you want -->
+    <link href='https://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- Custom CSS inside CSS folder -->
+    <link rel="stylesheet" href="css/style.css">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container" style="margin-top: 60px">
+      <div class="col-md-8">
+        <form action="/api/create" method="POST">
+
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" name="name" placeholder="Enter Name" class="form-control" id="name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="age">Age</label>
+            <input type="text" name="age" placeholder="Enter Age" class="form-control" id="age" required>
+          </div>
+
+          <div class="form-group">
+            <label for="tags">Tags</label>
+            <input type="text" name="tags" placeholder="Enter Tags (separated by commas)" class="form-control" id="tags" required>
+          </div>
+
+          <div class="form-group">
+            <label for="weight">Weight</label>
+            <input type="text" name="weight" placeholder="Enter Weight" class="form-control" id="weight" required>
+          </div>
+
+          <div class="form-group">
+            <label for="color">Color</label>
+            <input type="text" name="color" placeholder="Enter Color" class="form-control" id="color" required>
+          </div>
+
+          <div class="form-group">
+            <label for="url">Url</label>
+            <input type="text" name="url" placeholder="Enter Image Url" class="form-control" id="url">
+          </div>
+
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+      </div>
+    </div>
+
+  </body>
+
+    <!-- JQuery script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+</html>
+
+
+

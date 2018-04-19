@@ -1,3 +1,57 @@
 /**************/
 /* Custom CSS */
 /**************/
+
+img {
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.card {
+    background: #FFFFFF;
+    border: 1px solid #E9EAEE;
+    border-radius: 8px;
+    max-width: 360px;
+    min-width: 320px;
+    margin-right: 16px;
+    margin-top: 16px;
+    padding: 16px;
+    align-items: center;
+}
+
+.control-panel {
+    align-items: center;
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.control-panel a {
+    padding: 8px 16px;
+    margin: 0 6px;
+}
+
+.tagHolder {
+    align-items: center;
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.tag {
+    font-size: 10px;
+    text-align: center;
+    border-radius: 100px;
+    letter-spacing: 1.5px;
+    background-color: #ECECEC;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    margin: 0 6px;
+}
+
